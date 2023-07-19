@@ -1,0 +1,113 @@
+{% extends 'base_without_container.html' %}
+
+{% block page_content %}
+    <style>
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .btn-сustom {
+            background: #343a40;
+            color: darkgrey;
+        }
+
+        .btn-сustom:hover {
+            color: white;
+        }
+
+        .text {
+            color: white;
+        }
+    </style>
+
+    <header>
+        <h1>Imagine Dragons Website</h1>
+    </header>
+
+    <body style="background-image: url('/static/images/home_bg.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <div class="container">
+        <div class="card" style="background: #0a0a0a">
+            <img src="/static/images/covers/2.jpg" alt="Album Cover" class="card-img-top">
+            <div class="card-body">
+                <h2 class="text">Smoke + Mirrors</h2>
+                <p class="text">Imagine Dragons is an American pop rock band from Las Vegas, Nevada, consisting of
+                    lead
+                    vocalist Dan
+                    Reynolds, guitarist Wayne Sermon, bassist Ben McKee, and drummer Daniel Platzman. The band
+                    gained
+                    significant popularity with their breakthrough single "It's Time" and has since released
+                    multiple
+                    successful albums, including "Night Visions," "Smoke + Mirrors," and "Evolve." Their energetic
+                    performances and unique sound have made them one of the most successful rock bands of the
+                    2010s.</p>
+                <br>
+                <a href="/albums" class="btn btn-сustom">View More</a>
+            </div>
+        </div>
+        <br>
+        <div class="card" style="background: #0a0a0a">
+            <img src="/static/images/covers/3.jpg" alt="Album Cover" class="card-img-top">
+            <div class="card-body">
+                <h2 class="text">Evolve</h2>
+                <p class="text">Formed in 2008, Imagine Dragons quickly gained attention in the indie rock scene
+                    with
+                    their
+                    EPs "Imagine
+                    Dragons" and "Hell and Silence." Their powerful blend of rock, pop, and electronic elements,
+                    coupled
+                    with introspective lyrics, resonated with a wide audience. The band's continued success is
+                    evident
+                    through their chart-topping hits such as "Radioactive," "Demons," and "Believer," which have
+                    solidified
+                    their place in contemporary music.</p>
+                <br>
+                <a href="/albums" class="btn btn-сustom">View More</a>
+            </div>
+        </div>
+        <br>
+        <div class="card" style="background: #0a0a0a">
+            <img src="/static/images/covers/4.jpg" alt="Album Cover" class="card-img-top">
+            <div class="card-body">
+                <h2 class="text">Origins</h2>
+                <p class="text">Imagine Dragons' music has been praised for its anthemic quality and emotional
+                    depth.
+                    Their
+                    lyrics often
+                    touch on themes of resilience, personal struggles, and social issues. The band's energetic live
+                    performances have captivated audiences worldwide, and they have received numerous awards and
+                    accolades,
+                    including Grammy Awards and Billboard Music Awards.</p>
+                <br>
+                <a href="/albums" class="btn btn-сustom">View More</a>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base_with_container.html' %}
+
+{% block page_content %}
+    <div id="page" class="">
+        <main id="main-content">
+            <section id="custom-page" class="page content-type-blocks">
+                <div class="single-post ">
+                    <article>
+                        <div class="post-contents ">
+
+                            <div class="wp-block-cover alignfull is-light" style="min-height:800px"><span
+                                    aria-hidden="true"
+                                    class="wp-block-cover__background has-background-dim-60 has-background-dim"></span>
+                                <div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow">
+                                    <h2 class="alignwide has-white-color has-text-color wp-block-heading"
+                                        style="font-size:64px">IMAGINE
+                                        DRAGONS</h2>
+
+
+                                    <div class="wp-block-columns alignwide is-layout-flex wp-container-3 wp-block-columns-is-layout-flex">
+                                        <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+                                            <div class="wp-block-cover" style="min-height:496px"><span
+                                                    aria-hidden="true"
+                                                    class="wp-block-cover__background has-black-background-color has-background-dim-100 has-background-dim"></span>
+                                                <div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow">
+                                                    <h1>Album details<br>{{ album.title }}<br></h1>
+                                                    <img src="{{ url_for('static', filename=album.cover) }}"
+                                                         class="card-img-top" alt="{{ album.title }}">
+                                                    {% for paragraph in album.description.split('\n') %}
+                                                        <p class="has-white-color has-text-color">{{ paragraph }}</p>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+{% endblock %}

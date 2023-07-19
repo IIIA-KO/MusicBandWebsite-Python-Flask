@@ -1,0 +1,19 @@
+{% extends 'album_action.html' %}
+
+{% block album_action_content %}
+    <div class="container">
+        <h1 style="color: white;" ><strong>ADD ALBUM</strong></h1>
+        <form action="/add_album" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="text" id="title" name="title" class="form-control" placeholder="Title" required>
+            </div>
+            <div class="form-group">
+                <textarea id="description" name="description" class="form-control" style="max-height: 532px; min-height: 532px;" placeholder="Description" required></textarea>
+            </div>
+            <div class="form-group">
+                <input style="color: white;" type="file" id="cover_image" name="cover_image" class="form-control-file" placeholder="Album cover (optional)">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Album</button>
+        </form>
+    </div>
+{% endblock %}

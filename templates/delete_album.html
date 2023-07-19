@@ -1,0 +1,30 @@
+{% extends 'album_action.html' %}
+
+{% block album_action_content %}
+    <style>
+        .container * {
+            font-weight: bold;
+            color: white;
+        }
+
+        .btn-danger, .btn-secondary {
+            margin: 10px;
+        }
+    </style>
+
+    <div class="container">
+        <h1><strong>DELETE ALBUM</strong></h1>
+
+        <div class="confirmation">
+            <h4>Are you sure you want to delete this album?</h4>
+            <h4>This action cannot be undone.</h4>
+        </div>
+
+        <div class="button-container">
+            <form method="post" action="{{ url_for('confirm_delete_album', album_id=album.id) }}">
+                <button type="submit" class="btn btn-danger">Yes</button>
+                <a href="{{ url_for('albums') }}" class="btn btn-secondary">No</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

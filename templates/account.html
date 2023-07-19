@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Imagine Dragons Site</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        .left {
+            width: 70%;
+            height: 100%;
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            height: 100%;
+
+        }
+
+        .container {
+            max-width: 400px;
+            text-align: center;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 20%;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .header-logo-container {
+            position: sticky;
+            top: 0;
+            background: #0a0a0a;
+            height: 100px;
+        }
+
+        .header-logo-desktop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo-medium {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+<div class="left"
+     style="background-image: url('/static/images/home_bg.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+</div>
+<div class="right">
+    <div class="header-logo-container">
+        <picture class="header-logo-desktop" style="background: #0a0a0a">
+            <img src="https://www.imaginedragonsmusic.com/files/2022/08/ID_Logo-600x61.png" alt="" class=" logo-medium">
+        </picture>
+    </div>
+    <div class="container">
+        {% block content %}
+            <div class="container">
+                {% for message in get_flashed_messages() %}
+                    <div class="alert alert-warning">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+
+                {% block page_content %}{% endblock %}
+            </div>
+        {% endblock %}
+
+        {% block account_content %}
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>

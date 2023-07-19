@@ -1,0 +1,16 @@
+{% extends "account.html" %}
+
+{% block account_content %}
+    <h1>LOG IN TO YOUR ACCOUNT</h1>
+    <form action="{{ url_for('login') }}" method="post">
+        <div class="form-group">
+            <input type="text" id="username" name="username" class="form-control" placeholder="Login" required>
+        </div>
+        <div class="form-group">
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+        </div>
+        <input type="submit" value="LOG IN" class="btn btn-primary">
+    </form>
+    <br>
+    <a href="/register">CREATE ACCOUNT</a>
+{% endblock %}
