@@ -31,8 +31,15 @@ class Users(db.Model):
     username = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(100), nullable=False)
 
-    def __repr__(self):
-        return '<User %r>' % self.username
+    role_id = db.Column(db.Integer, db.ForeignKey('roles.id'), nullable=False)
+    role = db.relationship('Role', backref=db.backref('users', lazy=True))
+
+
+# ------------------------------------------------------------------------------
+class Role(db.Model):
+    __tablename__ = 'roles'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), unique=True, nullable=False)
 
 
 def is_valid_password(password):
@@ -79,7 +86,9 @@ def register():
                 'The password must contain at least one capital letter, one digit and be no shorter than 8 characters')
             return redirect(url_for('register'))
 
-        new_user = Users(username=username, password=generate_password_hash(password))
+        user_role = Role.query.filter_by(name='user').first()
+
+        new_user = Users(username=username, password=generate_password_hash(password),  role_id=1)
         db.session.add(new_user)
         db.session.commit()
 
@@ -100,6 +109,9 @@ def login():
         user = Users.query.filter_by(username=username).first()
         if user and check_password_hash(user.password, password):
             session['username'] = user.username
+
+            session['role_id'] = user.role_id
+
             return redirect(url_for('home'))
         else:
             flash('Invalid username or password')
