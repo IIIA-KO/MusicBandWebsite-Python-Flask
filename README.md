@@ -40,5 +40,3 @@ no.
 ![Edit page](/Screenshots/06-Edit.png)
 
 ![Delete page](/Screenshots/07-Delete.png)
-
-![Authorized albums page](/Screenshots/08-AuthorizedAlbums.png)
